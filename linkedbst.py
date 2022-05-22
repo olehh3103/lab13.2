@@ -149,7 +149,7 @@ class LinkedBST(AbstractCollection):
                         break
                     else:
                         cur = cur.right
-                
+        self._size += 1
                 # print("hoho")
         # def recurse(node):
         #     # New item is less, go left until spot is found
@@ -373,12 +373,14 @@ class LinkedBST(AbstractCollection):
         print("пошук за допомогою list: ", time.time() - start_time1)
 
         start_time2 = time.time()
-        # print(dictionary)
+        print(len(dictionary))
         my_tree1 = LinkedBST(dictionary)
         for _ in tqdm.tqdm(range(10000)):
             elem = choice(dictionary)
+            # print(_)
             # print(elem)
             my_tree1.find(elem)
+        print(my_tree1)
         print("пошук в словнику за абеткою: ", time.time() - start_time2)
 
         start_time3 = time.time()
